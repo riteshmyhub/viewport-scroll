@@ -1,0 +1,32 @@
+{
+   "name": "viewport-scroll",
+   "version": "1.0.0",
+   "main": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "files": [
+      "dist/**/*"
+   ],
+   "scripts": {
+      "build": "tsc",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "npm run build && npm link && cd ./dev && npm link viewport-scroll && npm run dev",
+      "clean": "rmdir /s /q dist && npm unlink viewport-scroll && cd ./dev && npm unlink viewport-scroll",
+      "restart": "npm run clean && npm run dev"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "description": "",
+   "dependencies": {
+      "@types/react": "^19.1.9",
+      "react": "^19.1.1",
+      "typescript": "^5.9.2"
+   },
+   "exports": {
+      ".": {
+         "import": "./dist/index.js",
+         "require": "./dist/index.js",
+         "types": "./dist/index.d.ts"
+      }
+   }
+}
