@@ -1,6 +1,7 @@
 {
    "name": "viewport-scroll",
    "version": "1.0.0",
+   "description": "A simple React component to track the window's viewport-scroll position.",
    "main": "dist/index.js",
    "types": "dist/index.d.ts",
    "files": [
@@ -14,14 +15,22 @@
       "restart": "npm run clean && npm run dev"
    },
    "keywords": [],
-   "author": "",
+   "author": "ritesh goswami",
    "license": "ISC",
-   "description": "",
    "dependencies": {
       "@types/react": "^19.1.9",
       "react": "^19.1.1",
       "typescript": "^5.9.2"
    },
+   "devDependencies": {},
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/riteshmyhub/viewport-scroll.git"
+   },
+   "bugs": {
+      "url": "https://github.com/riteshmyhub/viewport-scroll/issues"
+   },
+   "homepage": "https://github.com/riteshmyhub/viewport-scroll#readme",
    "exports": {
       ".": {
          "import": "./dist/index.js",

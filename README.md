@@ -15,19 +15,13 @@ import ViewportScroll, { type ScrollHandlerType } from "viewport-scroll";
 import { useState } from "react";
 
 type State = {
-   isLoading: boolean,
+   isLoading: boolean;
    data: {
-      id: number,
-      name: string,
-   }[],
+      id: number;
+      name: string;
+   }[];
 };
 
-const style = {
-   height: "97vh",
-   width: "80%",
-   overflowY: "auto",
-   margin: "auto",
-};
 export default function Component() {
    const [user, setUser] = useState<State>({ isLoading: false, data: [] });
 
@@ -48,7 +42,11 @@ export default function Component() {
    };
 
    return (
-      <ViewportScroll threshold={200} isLoading={user.isLoading} asyncHandler={getCharacter} style={style}>
+      <ViewportScroll //
+         threshold={200}
+         isLoading={user.isLoading}
+         asyncHandler={getCharacter}
+         style={{ height: "300px", width: "50%", overflowY: "auto", margin: "auto" }}>
          {user.data.map((char) => (
             <h3 key={char.id}>{char.name}</h3>
          ))}
