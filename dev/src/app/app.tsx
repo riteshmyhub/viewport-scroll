@@ -9,7 +9,7 @@ type State = {
    }[];
 };
 
-export default function Component() {
+export default function App() {
    const [user, setUser] = useState<State>({ isLoading: false, data: [] });
 
    const getCharacter: ScrollHandlerType = async ({ page, setHasMore }) => {
@@ -29,15 +29,20 @@ export default function Component() {
    };
 
    return (
-      <ViewportScroll //
-         threshold={200}
-         isLoading={user.isLoading}
-         asyncHandler={getCharacter}
-         style={{ height: "300px", width: "50%", overflowY: "auto", margin: "auto" }}>
-         {user.data.map((char) => (
-            <h3 key={char.id}>{char.name}</h3>
-         ))}
-         {user.isLoading && <div>Loading more characters...</div>}
-      </ViewportScroll>
+      <div className="App">
+         <h1>Infinite Scroll with ViewportScroll</h1>
+         <ViewportScroll
+            threshold={200}
+            isLoading={user.isLoading}
+            asyncHandler={getCharacter}
+            style={{ height: "400px", width: "80%", overflowY: "auto", margin: "auto", border: "1px solid #ccc", padding: "1rem" }}>
+            {user.data.map((char) => (
+               <div key={char.id} style={{ padding: "1rem", borderBottom: "1px solid #eee" }}>
+                  <h3>{char.name}</h3>
+               </div>
+            ))}
+            {user.isLoading && <div style={{ textAlign: "center", padding: "1rem" }}>Loading more characters...</div>}
+         </ViewportScroll>
+      </div>
    );
 }
